@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "/home/silveradiance/Development/junction-spotify/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/home/silveradiance/Development/junction-spotify/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/silveradiance/Development/junction-spotify/android/C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "/home/silveradiance/Development/junction-spotify/android/C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

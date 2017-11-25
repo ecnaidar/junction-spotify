@@ -116,6 +116,5 @@
     <orderEntry type="library" exported="" name="org.webkit:android-jsc-r174650" level="project" />
     <orderEntry type="library" exported="" name="com.facebook.react:react-native-0.49.5" level="project" />
     <orderEntry type="module" module-name="react-native-maps" exported="" />
-    <orderEntry type="library" exported="" name="android-android-23" level="project" />
   </component>
 </module>

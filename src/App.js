@@ -8,21 +8,21 @@ import qs from "query-string";
 
 import Map from "./Map";
 import LoginScreen from "./LoginScreen";
+import SharePlaylistScreen from "./SharePlaylistScreen";
 
 import rootReducer from "./reducers";
 
-
-
-const Navigator = StackNavigator(
-  {
-    Home: {
-      screen: Map
-    },
-    Login: {
-      screen: LoginScreen
-    }
+const Navigator = StackNavigator({
+  Home: {
+    screen: Map
   },
-);
+  Login: {
+    screen: LoginScreen
+  },
+  SharePlaylist: {
+    screen: SharePlaylistScreen
+  }
+});
 
 export default props => {
   const store = createStore(rootReducer);

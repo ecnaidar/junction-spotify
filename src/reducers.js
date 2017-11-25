@@ -9,7 +9,7 @@ function code(state = null, action) {
   }
 }
 
-function token(state = {}, action) {
+function token(state = null, action) {
   switch (action.type) {
     case "ACCESS_TOKEN":
       return { ...action.payload };
@@ -18,7 +18,27 @@ function token(state = {}, action) {
   }
 }
 
+function user(state = null, action) {
+  switch (action.type) {
+    case "SET_USER":
+      return { ...action.payload };
+    default:
+      return state;
+  }
+}
+
+function playlists(state = null, action) {
+  switch (action.type) {
+    case "SET_PLAYLISTS":
+      return { ...action.payload };
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
+  user,
   code,
-  token
+  token,
+  playlists
 });
