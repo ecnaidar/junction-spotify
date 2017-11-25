@@ -1,8 +1,28 @@
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import { connect } from "react-redux";
+import {
+  Header,
+  Body,
+  Title,
+  Right,
+  Text,
+  Button,
+  Container,
+  Content
+} from "native-base";
+class Map extends Component {
+  static navigationOptions = ({navigation}) => {
+    return {
+      headerRight: (
+        <Button transparent onPress={() => navigation.navigate("Login")}>
+          <Text>Login</Text>
+        </Button>
+      )
+    };
+  };
 
-export default class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +50,17 @@ export default class Map extends Component {
     const { region, myCoords } = this.state;
     return (
       <View style={styles.container}>
-        <MapView style={styles.map} provider={PROVIDER_GOOGLE} region={region}>
+        <MapView
+          style={styles.map}
+          provider={PROVIDER_GOOGLE}
+          initialRegion={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421
+          }}
+          region={region}
+        >
           {myCoords && <MapView.Marker coordinate={myCoords} title="ME" />}
         </MapView>
       </View>
@@ -48,3 +78,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject
   }
 });
+
+export default connect(state => {
+  return { token: state.token };
+})(Map);

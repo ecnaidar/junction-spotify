@@ -1,13 +1,5 @@
 [
     {
-        "merged": "C:\\home\\silveradiance\\dog\\android\\C:\\Users\\Max\\Documents\\dog\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\home\\silveradiance\\dog\\android\\C:\\Users\\Max\\Documents\\dog\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\home\\silveradiance\\dog\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\home\\silveradiance\\dog\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
         "source": "C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
