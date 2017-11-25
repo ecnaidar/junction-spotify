@@ -31,8 +31,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dog/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="19" />
-              <folding />
+              <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="32" />
+              <folding>
+                <marker date="1511597848366" expanded="false" signature="355:361" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,7 +81,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="235">
               <caret line="138" column="14" lean-forward="false" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
-              <folding />
+              <folding>
+                <marker date="1511597823851" expanded="true" signature="4012:5435" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4089:4310" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4249:4263" ph="{" />
+                <marker date="1511597823851" expanded="true" signature="4294:4304" ph="}" />
+                <marker date="1511597823851" expanded="true" signature="4322:4545" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4336:4539" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4561:4747" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4579:4741" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4827:5433" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4869:5427" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="4893:5069" ph="..." />
+                <marker date="1511597823851" expanded="true" signature="5212:5417" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="5450:5673" ph="{...}" />
+                <marker date="1511597823851" expanded="true" signature="5675:5801" ph="..." />
+                <marker date="1511597823851" expanded="true" signature="5846:5897" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -3374,7 +3392,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511561566797" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511598440948" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3473,7 +3491,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511561566798" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1511598441012" />
       </method>
     </configuration>
     <list size="1">
@@ -3513,7 +3531,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3531,7 +3548,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39123505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39123505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3559,7 +3576,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1511597848366" expanded="false" signature="355:361" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3619,7 +3638,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2484">
           <caret line="138" column="14" lean-forward="false" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
-          <folding />
+          <folding>
+            <marker date="1511597823851" expanded="true" signature="4012:5435" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4089:4310" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4249:4263" ph="{" />
+            <marker date="1511597823851" expanded="true" signature="4294:4304" ph="}" />
+            <marker date="1511597823851" expanded="true" signature="4322:4545" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4336:4539" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4561:4747" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4579:4741" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4827:5433" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4869:5427" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4893:5069" ph="..." />
+            <marker date="1511597823851" expanded="true" signature="5212:5417" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="5450:5673" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="5675:5801" ph="..." />
+            <marker date="1511597823851" expanded="true" signature="5846:5897" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3627,7 +3662,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1511597848366" expanded="false" signature="355:361" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3643,7 +3680,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2484">
           <caret line="138" column="14" lean-forward="false" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
-          <folding />
+          <folding>
+            <marker date="1511597823851" expanded="true" signature="4012:5435" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4089:4310" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4249:4263" ph="{" />
+            <marker date="1511597823851" expanded="true" signature="4294:4304" ph="}" />
+            <marker date="1511597823851" expanded="true" signature="4322:4545" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4336:4539" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4561:4747" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4579:4741" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4827:5433" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4869:5427" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4893:5069" ph="..." />
+            <marker date="1511597823851" expanded="true" signature="5212:5417" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="5450:5673" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="5675:5801" ph="..." />
+            <marker date="1511597823851" expanded="true" signature="5846:5897" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3670,8 +3723,10 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dog/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="19" />
-          <folding />
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <marker date="1511597848366" expanded="false" signature="355:361" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3733,14 +3788,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="138" column="14" lean-forward="false" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
-          <folding />
+          <folding>
+            <marker date="1511597823851" expanded="true" signature="4012:5435" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4089:4310" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4249:4263" ph="{" />
+            <marker date="1511597823851" expanded="true" signature="4294:4304" ph="}" />
+            <marker date="1511597823851" expanded="true" signature="4322:4545" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4336:4539" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4561:4747" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4579:4741" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4827:5433" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4869:5427" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="4893:5069" ph="..." />
+            <marker date="1511597823851" expanded="true" signature="5212:5417" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="5450:5673" ph="{...}" />
+            <marker date="1511597823851" expanded="true" signature="5675:5801" ph="..." />
+            <marker date="1511597823851" expanded="true" signature="5846:5897" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
