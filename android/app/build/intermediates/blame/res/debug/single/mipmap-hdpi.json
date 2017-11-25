@@ -1,10 +1,14 @@
 [
     {
-        "merged": "/home/silveradiance/dog/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/home/silveradiance/dog/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\home\\silveradiance\\dog\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\home\\silveradiance\\dog\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "/home/silveradiance/dog/android/C:\\Users\\Max\\Documents\\dog\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
-        "source": "/home/silveradiance/dog/android/C:\\Users\\Max\\Documents\\dog\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Max\\Documents\\JavaScript\\junction-spotify\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\home\\silveradiance\\dog\\android\\C:\\Users\\Max\\Documents\\dog\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "C:\\home\\silveradiance\\dog\\android\\C:\\Users\\Max\\Documents\\dog\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     }
 ]

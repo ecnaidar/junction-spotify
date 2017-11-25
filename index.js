@@ -1,3 +1,3 @@
 import { AppRegistry } from 'react-native';
 import App from './src/App';
-AppRegistry.registerComponent('spotift-junction', () => App);
+AppRegistry.registerComponent('spotify-junction', () => App);
