@@ -1,11 +1,21 @@
 import React, { Component } from "react";
-import { List, ListItem, Text, Thumbnail, Body, Content } from "native-base";
+import {
+  List,
+  ListItem,
+  Text,
+  Thumbnail,
+  Body,
+  Content,
+  Right,
+  Icon
+} from "native-base";
 
 import { connect } from "react-redux";
 import qs from "query-string";
 import axios from "axios";
 
-import { clientId, clientSecret } from "../secret.json";
+import { baseRoute } from "./constants";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +23,10 @@ class Login extends Component {
       gotCredentials: false
     };
   }
+
+  static navigationOptions = ({ navigation }) => ({
+    title: `Share Playlist`
+  });
 
   componentDidMount() {
     const { token, playlists, gotPlaylists } = this.props;
@@ -37,21 +51,45 @@ class Login extends Component {
   }
 
   render() {
-    const { playlists } = this.props;
-    console.log(playlists);
+    const { playlists, user, navigation, gotSpots } = this.props;
+    const { state: navigationState } = navigation;
+    const { params } = navigationState;
+    const { coords } = params;
+    console.log(this.props);
 
     return (
       <Content>
-        <List
-          style={{
-            flex: 1,
-            padding: 0
-          }}
-        >
+        <List style={{}}>
           {playlists &&
             playlists.items.map(playlist => {
               return (
-                <ListItem style={{ margin: 0 }}>
+                <ListItem
+                  key={playlist.id}
+                  style={{ paddingLeft: 10, marginLeft: 0 }}
+                  button
+                  onPress={() => {
+                    console.log("sharing playlist");
+                    axios
+                      .get(
+                        baseRoute +
+                          "/add_spot?" +
+                          qs.stringify({
+                            verified_user_id: user.id,
+                            playlist_id: playlist.id,
+                            ...coords
+                          })
+                      )
+                      .then(
+                        res => {
+                          gotSpots(res.data);
+                          navigation.goBack();
+                        },
+                        err => {
+                          console.log(err);
+                        }
+                      );
+                  }}
+                >
                   <Thumbnail
                     circular
                     size={80}
@@ -59,8 +97,11 @@ class Login extends Component {
                   />
                   <Body>
                     <Text>{playlist.name}</Text>
-                    <Text note>{playlist.tracks.total}</Text>
+                    <Text note>{playlist.tracks.total} tracks</Text>
                   </Body>
+                  <Right>
+                    <Icon name="arrow-forward" />
+                  </Right>
                 </ListItem>
               );
             })}
@@ -74,6 +115,7 @@ export default connect(
   state => {
     return {
       token: state.token,
+      user: state.user,
       playlists: state.playlists
     };
   },
@@ -83,6 +125,12 @@ export default connect(
         dispatch({
           type: "SET_PLAYLISTS",
           payload: playlists
+        });
+      },
+      gotSpots: spots => {
+        dispatch({
+          type: "SET_SPOTS",
+          payload: spots
         });
       }
     };

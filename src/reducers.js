@@ -36,8 +36,18 @@ function playlists(state = null, action) {
   }
 }
 
+function spots(state = null, action) {
+  switch (action.type) {
+    case "SET_SPOTS":
+      return [ ...action.payload ];
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   user,
+  spots,
   code,
   token,
   playlists

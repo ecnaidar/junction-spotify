@@ -6,3 +6,7 @@ android/build/
 android/app/build/
 
 secret.*
+
+.idea/
+android/.idea
+android/.gradle 

@@ -5,27 +5,23 @@ import { connect } from "react-redux";
 import qs from "query-string";
 import axios from "axios";
 
+import { redirectUri, uri } from "./constants";
+
 import { clientId, clientSecret } from "../secret.json";
+
 class Login extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "Login"
+    };
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       gotCredentials: false
     };
   }
-
-  userScope = ["user-read-private", "playlist-read-private"];
-
-  redirectUri = "http://spotify.junction.example/";
-
-  uri = "https://accounts.spotify.com/authorize" +
-    "?response_type=code" +
-    "&client_id=" +
-    clientId +
-    "&scope=" +
-    encodeURIComponent(this.userScope.join(" ")) +
-    "&redirect_uri=" +
-    encodeURIComponent(this.redirectUri);
 
   onNavigationStateChange = ({
     canGoBack,
@@ -37,15 +33,10 @@ class Login extends Component {
   }) => {
     const { gotCredentials } = this.state;
     const { gotCode, gotToken, navigation } = this.props;
-    if (
-      url &&
-      !gotCredentials &&
-      url.includes("http://spotify.junction.example/")
-    ) {
+
+    if (url && !gotCredentials && url.includes(redirectUri)) {
       this.setState({ gotCredentials: true });
       const { code } = qs.parse(qs.extract(url));
-
-      gotCode(code);
       navigation.goBack();
       axios
         .post(
@@ -55,7 +46,7 @@ class Login extends Component {
             client_id: clientId,
             client_secret: clientSecret,
             grant_type: "authorization_code",
-            redirect_uri: this.redirectUri
+            redirect_uri: redirectUri
           }),
           {
             headers: {
@@ -65,7 +56,7 @@ class Login extends Component {
         )
         .then(
           res => {
-            gotToken(res.data);
+            gotToken(res.data, code);
             console.log(res);
           },
           err => {
@@ -79,12 +70,9 @@ class Login extends Component {
     return (
       <WebView
         source={{
-          uri: this.uri
+          uri: uri
         }}
         onNavigationStateChange={this.onNavigationStateChange}
-        onError={(...args) => {
-          console.log(args);
-        }}
       />
     );
   }
@@ -102,7 +90,7 @@ export default connect(
           payload: code
         });
       },
-      gotToken: token => {
+      gotToken: (token, code) => {
         dispatch({
           type: "ACCESS_TOKEN",
           payload: token

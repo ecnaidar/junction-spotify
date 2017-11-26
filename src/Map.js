@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Linking } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import axios from "axios";
 import { connect } from "react-redux";
@@ -13,9 +13,11 @@ import {
   Container,
   Content,
   Fab,
-  Icon
+  Icon,
+  Badge
 } from "native-base";
 
+import { baseRoute } from "./constants";
 class Profile extends Component {
   componentWillReceiveProps(nextProps) {
     const { user, token } = nextProps;
@@ -51,11 +53,15 @@ class Profile extends Component {
     const { user, navigation } = this.props;
     console.log("Profile props", this.props);
     if (user) {
-      return <Text>{user.id}</Text>;
+      return (
+        <Badge style={{ backgroundColor: "black", marginRight: 5 }}>
+          <Text>{user.id}</Text>
+        </Badge>
+      );
     }
     return (
       <Button transparent onPress={() => navigation.navigate("Login")}>
-        <Text>Login</Text>
+        <Text style={{ color: "black" }}>Login</Text>
       </Button>
     );
   }
@@ -82,6 +88,7 @@ const ConnectedProfile = connect(
 class Map extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
+      title: "SpotCast",
       headerRight: <ConnectedProfile navigation={navigation} />
     };
   };
@@ -101,6 +108,8 @@ class Map extends Component {
   }
 
   componentDidMount() {
+    const { spots, gotSpots } = this.props;
+
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       const { latitude, longitude } = coords;
       this.setState({
@@ -108,11 +117,24 @@ class Map extends Component {
         myCoords: { latitude, longitude }
       });
     });
+
+    if (!spots) {
+      axios.get(baseRoute + "/get_all_spots").then(
+        res => {
+          console.log(gotSpots);
+          gotSpots(res.data);
+        },
+        err => {
+          console.error(err);
+        }
+      );
+    }
   }
 
   render() {
     const { region, myCoords } = this.state;
-    const { navigation, token } = this.props;
+    const { navigation, token, spots } = this.props;
+    console.log("spots", spots);
     return (
       <View style={styles.container}>
         <MapView
@@ -127,12 +149,49 @@ class Map extends Component {
           region={region}
         >
           {myCoords && <MapView.Marker coordinate={myCoords} title="ME" />}
+          {spots &&
+            token &&
+            spots.map(spot => (
+              <MapView.Marker
+                key={spot.playlist_id}
+                coordinate={spot}
+                pinColor="green"
+                onPress={() => {
+                  console.log("spot pressed");
+                  axios
+                    .get(
+                      `https://api.spotify.com/v1/users/${
+                        spot.verified_user_id
+                      }/playlists/${spot.playlist_id}`,
+                      {
+                        headers: {
+                          Authorization: `Bearer ${token.access_token}`
+                        }
+                      }
+                    )
+                    .then(
+                      res => {
+                        console.log("Got clicked playlist", res);
+                        const playlistUrl = res.data.external_urls.spotify;
+                        Linking.openURL(playlistUrl);
+                      },
+                      err => {
+                        console.error(err);
+                      }
+                    );
+                }}
+              />
+            ))}
         </MapView>
         {token && (
           <Fab
-            style={{ backgroundColor: "#5067FF" }}
+            style={{ backgroundColor: "black" }}
             position="bottomRight"
-            onPress={() => navigation.navigate("SharePlaylist")}
+            onPress={() =>
+              navigation.navigate("SharePlaylist", {
+                coords: this.state.myCoords
+              })
+            }
           >
             <Icon name="share" />
           </Fab>
@@ -153,6 +212,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(state => {
-  return { token: state.token };
-})(Map);
+export default connect(
+  state => {
+    return { token: state.token, spots: state.spots };
+  },
+  dispatch => {
+    return {
+      gotSpots: spots => {
+        dispatch({ type: "SET_SPOTS", payload: spots });
+      }
+    };
+  }
+)(Map);
