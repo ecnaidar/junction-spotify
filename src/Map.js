@@ -18,6 +18,12 @@ import {
 } from "native-base";
 
 import { baseRoute } from "./constants";
+
+import { getAllSpots } from "./api";
+
+const gotSpots = dispatch => spots => {
+  dispatch({ type: "SET_SPOTS", payload: spots });
+};
 class Profile extends Component {
   componentWillReceiveProps(nextProps) {
     const { user, token } = nextProps;
@@ -29,7 +35,7 @@ class Profile extends Component {
     this.getUser(user, token);
   }
 
-  getUser(user, token) {
+  getUser = (user, token) => {
     const { setUser } = this.props;
     if (!user && token) {
       axios
@@ -48,15 +54,36 @@ class Profile extends Component {
           }
         );
     }
-  }
+  };
+
+  getSpots = () => {
+    const { gotSpots } = this.props;
+    getAllSpots().then(
+      res => {
+        console.log("Refreshed Spots", res);
+        gotSpots(res.data);
+      },
+      err => {
+        console.error("REEEEE", err);
+      }
+    );
+  };
+
   render() {
     const { user, navigation } = this.props;
     console.log("Profile props", this.props);
     if (user) {
       return (
-        <Badge style={{ backgroundColor: "black", marginRight: 5 }}>
-          <Text>{user.id}</Text>
-        </Badge>
+        <View style={{ flexDirection: "row" }}>
+          <Button small transparent onPress={this.getSpots}>
+            <Icon style={{ color: "black" }} name="refresh" />
+          </Button>
+          <Badge
+            style={{ backgroundColor: "black", marginLeft: 5, marginRight: 5 }}
+          >
+            <Text>{user.id}</Text>
+          </Badge>
+        </View>
       );
     }
     return (
@@ -80,7 +107,8 @@ const ConnectedProfile = connect(
         dispatch({
           type: "SET_USER",
           payload: user
-        })
+        }),
+      gotSpots: gotSpots(dispatch)
     };
   }
 )(Profile);
@@ -119,7 +147,7 @@ class Map extends Component {
     });
 
     if (!spots) {
-      axios.get(baseRoute + "/get_all_spots").then(
+      getAllSpots().then(
         res => {
           console.log(gotSpots);
           gotSpots(res.data);
@@ -218,9 +246,7 @@ export default connect(
   },
   dispatch => {
     return {
-      gotSpots: spots => {
-        dispatch({ type: "SET_SPOTS", payload: spots });
-      }
+      gotSpots: gotSpots(dispatch)
     };
   }
 )(Map);

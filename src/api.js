@@ -14,6 +14,8 @@ export const addSpot = (userId, playlistId, coords) =>
       })
   );
 
+export const getAllSpots = () => axios.get(baseRoute + "/get_all_spots");
+
 export const makePublic = (userId, playlistId, token) =>
   axios.put(
     `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}`,
