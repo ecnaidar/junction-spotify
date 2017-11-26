@@ -153,11 +153,11 @@ class Map extends Component {
             token &&
             spots.map(spot => (
               <MapView.Marker
-                key={spot.playlist_id}
+                key={spot.verified_user_id + spot.playlist_id}
                 coordinate={spot}
                 pinColor="green"
                 onPress={() => {
-                  console.log("spot pressed");
+                  console.log("spot pressed", spot, token);
                   axios
                     .get(
                       `https://api.spotify.com/v1/users/${
