@@ -1,8 +1,6 @@
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
-Using [Dog API](https://dog.ceo)
-
-Basically just playing around with [React Navigation](https://reactnavigation.org/)
+Project for Junction 2017 in Entertaiment track.
 
 # Running it
 
